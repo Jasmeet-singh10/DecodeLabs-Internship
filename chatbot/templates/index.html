@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Session // Chatbot with Memory</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="console">
+    <header class="console__header">
+      <div class="console__title">
+        <span class="dot"></span>
+        <span>session.log</span>
+      </div>
+      <div class="console__meta">
+        <span id="history-count">0</span>&nbsp;messages in memory
+        <button id="reset-btn" title="Clear this session's history">reset</button>
+      </div>
+    </header>
+
+    <main id="log" class="console__log" aria-live="polite"></main>
+
+    <form id="chat-form" class="console__input">
+      <span class="prompt">&gt;</span>
+      <input
+        id="message-input"
+        type="text"
+        autocomplete="off"
+        placeholder="Type a message and press enter…"
+        aria-label="Message"
+      />
+      <button type="submit">send</button>
+    </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
